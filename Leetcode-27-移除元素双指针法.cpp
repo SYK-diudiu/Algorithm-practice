@@ -1,18 +1,17 @@
-class Solution 
-{
+class Solution {
 public:
-    int removeElement(vector<int>& nums, int val) 
-    {
-        int left = 0;
-        int n = nums.size();
-        for(int right = 0 ; right < n ; ++right)
+    int removeElement(vector<int>& nums, int val) {
+        int read = 0;
+        int write = 0;
+        int size = nums.size();
+        for(read = 0 ; read < size ; ++read)
         {
-            if(nums[right] != val)
+            if(nums[read] != val)
             {
-                nums[left] = nums[right];
-                ++left;
+                nums[write] = nums[read];
+                write++;
             }
         }
-        return left;     
+        return write;
     }
 };
